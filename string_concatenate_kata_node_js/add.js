@@ -12,7 +12,10 @@ function add(numbers) {
     input = parts[1];
   }
 
-  const values = input.split(delimiter).map(Number);
+  const values = input
+    .split(delimiter)
+    .map(Number)
+    .filter(n => n <= 1000);
 
   const negatives = values.filter(n => n < 0);
   if (negatives.length > 0) {

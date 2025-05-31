@@ -28,3 +28,12 @@ test('supports custom single-character delimiter like ;', () => {
 test('supports custom delimiter x and returns correct sum', () => {
   expect(add("//x\n2x3x4")).toBe(9);
 });
+
+
+test('throws error when a single negative number is provided', () => {
+  expect(() => add("1,-3,4")).toThrow("negatives not allowed: -3");
+});
+
+test('throws error with all negative numbers listed', () => {
+  expect(() => add("-1,-2,3")).toThrow("negatives not allowed: -1, -2");
+});

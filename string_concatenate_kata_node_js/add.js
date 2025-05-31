@@ -12,10 +12,15 @@ function add(numbers) {
     input = parts[1];
   }
 
-  return input
-    .split(delimiter)
-    .map(Number)
-    .reduce((sum, n) => sum + n, 0);
+  const values = input.split(delimiter).map(Number);
+
+  const negatives = values.filter(n => n < 0);
+  if (negatives.length > 0) {
+    throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
+  }
+
+  return values.reduce((sum, n) => sum + n, 0);
+
 }
 
 // Escape regex characters for safe dynamic RegExp

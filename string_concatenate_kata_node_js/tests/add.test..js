@@ -20,3 +20,11 @@ test('returns sum of multiple comma-separated numbers', () => {
 test('handles new lines between numbers along with commas', () => {
   expect(add("1\n2,3")).toBe(6);
 });
+
+test('supports custom single-character delimiter like ;', () => {
+  expect(add("//;\n1;2")).toBe(3);
+});
+
+test('supports custom delimiter x and returns correct sum', () => {
+  expect(add("//x\n2x3x4")).toBe(9);
+});

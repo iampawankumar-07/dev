@@ -12,10 +12,17 @@ function add(numbers) {
     input = parts[1];
   }
 
+   const checkForNonNumeric = input.split(delimiter).filter((currentNums) => isNaN(currentNums) === true)
+  console.log("checkForNonNumeric", checkForNonNumeric)
+  if(checkForNonNumeric.length > 0) {
+    throw new Error(`string type not allwed: ${checkForNonNumeric.join(', ')}`)
+  }
+
   const values = input
     .split(delimiter)
     .map(Number)
     .filter(n => n <= 1000);
+    
 
   const negatives = values.filter(n => n < 0);
   if (negatives.length > 0) {

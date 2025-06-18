@@ -44,3 +44,9 @@ test('ignores numbers greater than 1000', () => {
   expect(add("1000,1")).toBe(1001);
   expect(add("1001")).toBe(0);
 });
+
+test('validate a custom input', () => {
+
+    expect(() => add('12,aaa,45,bbb,44')).toThrow("string type not allwed: aaa, bbb")
+
+})

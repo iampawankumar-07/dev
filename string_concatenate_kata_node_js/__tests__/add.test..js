@@ -1,4 +1,4 @@
-const { add } = require('./add');
+const { add } = require('../add');
 
 test('returns 0 for empty string', () => {
   expect(add("")).toBe(0);
@@ -47,6 +47,6 @@ test('ignores numbers greater than 1000', () => {
 
 test('validate a custom input', () => {
 
-    expect(() => add('12,aaa,45,bbb,44')).toThrow("string type not allwed: aaa, bbb")
+    expect(() => add('12,aaa,45,bbb,44')).toThrow("string type not allowed: aaa, bbb")
 
 })

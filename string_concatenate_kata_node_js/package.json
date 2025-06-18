@@ -1,7 +1,7 @@
 {
   "name": "string_concatenate_kata_node_js",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "add.js",
   "scripts": {
     "test": "jest --watchAll"
   },
